@@ -21,4 +21,6 @@
 
       ansible-playbook pb_nmap.yml -i inventory.ini --diff
 
-Результат представлен в result.jpg
+Результат представлен ниже 
+![1](https://github.com/RenarAKB/devops/assets/101873862/901e24bf-fa40-4b32-a6ff-a940b79c62aa)
+
