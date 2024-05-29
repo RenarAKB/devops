@@ -1,26 +1,29 @@
 # devops
 
-Задание: Создать плейбук для сканирования запрошенных серверов при помощи nmap
+Задание:
+Создать несколько виртуальных хостов с помощью ansible (на одном сервере несколько сайтов)
 
 Порядок выполнения работы
-     sudo apt install nmap
 
-Создать invntory.ini с id и паролем (сменил виртуалку, ssh по паролю)
+Создать inventory.ini с ip хоста
 
-     touch inventory.ini cat >> inventory.ini
+Создать плейбук с ролями и сайтами, а так же
 
-Создать плейбук
+Обработчик [handlers] (рестарт nginx)
 
-     touch pb_nmap.yml
+Темлейты [templates] (html и конфиги)
 
-Создать файл со сканируемыми серверами
+Таски [tasks] формирование сайтов в цикле
 
-     touch targets.txt
- 
-Выполнить плейбук
+Создать исполняемый shell файл для запуска плейбука с заданными параметрами
 
-      ansible-playbook pb_nmap.yml -i inventory.ini --diff
+     ansible-playbook ./playbook.yml -i ./conf.ini --diff --ask-become-pass
 
-Результат представлен ниже 
-![1](https://github.com/RenarAKB/devops/assets/101873862/901e24bf-fa40-4b32-a6ff-a940b79c62aa)
+Запустить его и проверить
+
+    sh playbook.sh
+
+    curl http://192.168.1.18 -H 'Host: first.com'
+
+Результат - ![result](https://github.com/RenarAKB/devops/assets/101873862/adbd9620-47d7-486a-aa28-37fd808c9ca8)
 
