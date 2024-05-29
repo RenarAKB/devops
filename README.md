@@ -1,20 +1,21 @@
 # devops
-Установить ансибл:
+1.Установить ансибл:
 
--sudo apt install ansible
+    sudo apt install ansible
 
-Выставить в сетевых настройках два адаптера:
+2.Выставить в сетевых настройках два адаптера:
 
--Виртуальный адаптер хоста,
--NAT
-Сгенерировать и установить ключ
+    Виртуальный адаптер хоста,
+    NAT.
 
--ssh-keygen -t rsa cat .ssh/id_rsa > ./ssh/authorized_keys
+3.Сгенерировать и установить ключ
 
-Создать .yml и .html
+    ssh-keygen -t rsa cat .ssh/id_rsa > ./ssh/authorized_keys
 
--mkdir lb touch playbook.yml touch index.html
+4.Создать .yml и .html
 
-Настроить правила проброса портов Запустить yaml скрипт
+    mkdir lb touch playbook.yml touch index.html
 
--sudo ansible-playbook playbook.yml
+5.Настроить правила проброса портов Запустить yaml скрипт
+
+    sudo ansible-playbook playbook.yml
